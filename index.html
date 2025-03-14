@@ -1,29 +1,73 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Scoreboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="container">
-      <div>
-        <h3 class="title">HOME</h3>
-        <div id="hScore">0</div>
-        <div class="home-btns">
-          <button id="home-1" onclick="hAdd1()">+1</button>
-          <button id="home-2" onclick="hAdd2()">+2</button>
-          <button id="home-3" onclick="hAdd3()">+3</button>
-        </div>
+    <div class="scoreboard-container">
+      <div class="timer-container">
+        <div class="timer" id="timer">60</div>
+        <div class="timer-label">SECONDS LEFT</div>
       </div>
-      <button class="button" id="new-game" onclick="newGame()">New Game</button>
 
-      <div>
-        <h3 class="title">GUEST</h3>
-        <div id="gScore">0</div>
-        <div class="guest-btns">
-          <button id="guest-1" onclick="gAdd1()">+1</button>
-          <button id="guest-2" onclick="gAdd2()">+2</button>
-          <button id="guest-3" onclick="gAdd3()">+3</button>
+      <div class="team-section home">
+        <div class="crown-container" id="home-crown">
+          <div class="crown">👑</div>
+        </div>
+        <div class="team-header">
+          <h2 class="team-name">Home</h2>
+        </div>
+        <div class="score-display">
+          <div class="score" id="home-score">0</div>
+        </div>
+        <div class="button-group">
+          <button class="score-button" onclick="updateScore('home', 1)">
+            +1
+          </button>
+          <button class="score-button" onclick="updateScore('home', 2)">
+            +2
+          </button>
+          <button class="score-button" onclick="updateScore('home', 3)">
+            +3
+          </button>
         </div>
       </div>
+
+      <div class="divider"></div>
+
+      <div class="team-section guest">
+        <div class="crown-container" id="guest-crown">
+          <div class="crown">👑</div>
+        </div>
+        <div class="team-header">
+          <h2 class="team-name">Guest</h2>
+        </div>
+        <div class="score-display">
+          <div class="score" id="guest-score">0</div>
+        </div>
+        <div class="button-group">
+          <button class="score-button" onclick="updateScore('guest', 1)">
+            +1
+          </button>
+          <button class="score-button" onclick="updateScore('guest', 2)">
+            +2
+          </button>
+          <button class="score-button" onclick="updateScore('guest', 3)">
+            +3
+          </button>
+        </div>
+      </div>
+
+      <button class="reset-button" onclick="resetGame()">NEW GAME</button>
     </div>
 
     <script src="index.js"></script>
